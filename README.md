@@ -4,10 +4,14 @@
 - Server 없이 JavaScript project 만으로 구현되었습니다.
 - Basic Library로 panolens.js 와 three.js 를 이용했습니다.
 
-### (1) Panolens.js
+### (1) 웹페이지는
+- github site : http://subokim.github.io/panovr
+- github repo : https://github.com/subokim/panovr
+
+### (2) Panolens.js
 - [Panolens.js](https://pchen66.github.io/Panolens/) 는 three.js 에서 Panorama VR 과 관련된 함수만 추려서 만든 Wrapping Library입니다.
 
-### (2) Three.js
+### (3) Three.js
 - [Three.js](https://threejs.org/)는 WebGL 함수를 Wrapping Library 입니다.
 
 ## 2.페이지 소개
@@ -81,3 +85,6 @@
 - viewer.tweenControlCenter(position, 0) 을 하면 카메라가 해당 포지션을 중앙에 바라봅니다.
 - easing 이란 애니메이션 효과입니다. 스무스하게 움직일 때의 완급을 조정합니다.
 - easing 을 사용하진 않았습니다.
+
+
+FIN.
