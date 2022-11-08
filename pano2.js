@@ -24,9 +24,8 @@ panorama2.addEventListener( 'progress', onProgressUpdate );
 panorama3 = new PANOLENS.ImagePanorama( 'asset/pano-vr3.jpg' );
 panorama3.addEventListener( 'progress', onProgressUpdate );
 
-infospot = new PANOLENS.Infospot( 350, PANOLENS.DataImage.Info );
-
-panorama1.add( infospot );
+//infospot = new PANOLENS.Infospot( 350, PANOLENS.DataImage.Info );
+//panorama1.add( infospot );
 
 viewer = new PANOLENS.Viewer( { container: container } );
 viewer.add( panorama1, panorama2, panorama3 );

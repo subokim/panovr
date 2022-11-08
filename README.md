@@ -4,7 +4,44 @@
 - Server 없이 JavaScript project 만으로 구현되었습니다.
 - Basic Library로 panolens.js 와 three.js 를 이용했습니다.
 
-## 2.구현개요
+### (1) Panolens.js
+- [Panolens.js](https://pchen66.github.io/Panolens/) 는 three.js 에서 Panorama VR 과 관련된 함수만 추려서 만든 Wrapping Library입니다.
+
+### (2) Three.js
+- [Three.js](https://threejs.org/)는 WebGL 함수를 Wrapping Library 입니다.
+
+## 2.페이지 소개
+### (1) Simpla Panorama Tour
+- Panorama 객체를 만들고 Camera를 중앙에 위치시키는 간단한 예제입니다.
+- SphereGeometry를 만들어, Panorama 이미지를 Texture로 입혔습니다.
+- 3D Scene 내에 Text 객체를 만들 수도 있지만, div tag 로 Title 을 만들어 배치했습니다.
+- 3D Object, Camera, Scene 의 개념을 이해할 수 있습니다.
+
+### (2) 3 Scene Panorama Toggle
+- 3장의 Panorama 객체를 한번에 로딩하고, 버튼을 누르면 토글하는 예제입니다.
+- viewer.setPanorama()의 기능을 이해할 수 있습니다.
+
+### (3) Hotspot Link
+- 2장의 사진을 로딩하고, 핫스팟 링크를 통해 이동할 수 있게 해줍니다.
+- Info Icon 사용법과 Link 하는 방법을 익힙니다.
+
+### (4) 2 Places, Walk
+- 진행방향을 정하고, 링크를 눌러 다음 장소로 이동합니다.
+- 현재 서있는 3D Scene 을 이해하고,
+- 바라보는 방향과 거리를 기준으로 벡터위치값을 산정
+- 이를 기준으로 진행방향과 링크를 삽입할 수 있습니다.
+
+### (5) Google StreetView
+- 구글 스트리트뷰의 단일 사진을 추출하여, Panorama Viewer 내에 구현합니다.
+- 구글에서 찍은 사진만 불러올 수 있고, 사용자가 찍어올린 독립 파일은 불러지지 않습니다.
+- Key 없이 해당 파일만 받아오는 방식이기 때문에, 임시용으로만 사용합니다.
+
+### (6) Hotspot Infos
+- 여러 개의 핫스팟을 삽입하고, 이를 클릭할 때 정보창이 보여지도록 했습니다.
+- 핫스팟은 Panorama Space 내에 묶여서 이동하지만,
+- 정보창은 적절한 위치에 고정되어 보이게 했습니다.
+
+## 3.구현설명
 ### (1) panolens import
 - panolens 는 three.js 를 이용해 구현된 오픈소스입니다.
 - import 할 때 three.js 와 panolens.js를 둘다 해야 합니다.
