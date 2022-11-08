@@ -20,6 +20,39 @@
       <article>속초 청초호 at 설악대교</article>
     </div>
     <div id="container"></div>
-    <script src="pano5.js"></script>
+    <script>
+      var container, panorama, viewer, scene, camera;
+      
+      bar = document.querySelector( '#bar' );
+
+      function onProgressUpdate ( event ) {
+        var percentage = event.progress.loaded/ event.progress.total * 100;
+        bar.style.width = percentage + "%";
+        if (percentage >= 100){
+          bar.classList.add( 'hide' );
+          setTimeout(function(){
+            bar.style.width = 0;
+          }, 1000);
+        }
+      }
+
+      container = document.querySelector( '#container' );
+      //panorama = new PANOLENS.ImagePanorama( './asset/pano_vr3.jpg' );
+      panorama = new PANOLENS.GoogleStreetviewPanorama('EybxZg5Wo6LIbhreS6JBtQ');
+
+      viewer = new PANOLENS.Viewer( { container: container, cameraFov : 60 } );
+      viewer.add( panorama );
+
+      camera = viewer.getCamera();
+      scene = viewer.getScene();
+      renderer = viewer.getRenderer();
+
+      var gridHelper = new THREE.GridHelper( 20, 20, '#adff2f', '#ff7f50' );
+      scene.add( gridHelper );
+
+      //camera rotate, lookAt
+      let targetPos = getVectorFromAngle(180, 0, 2000)
+      viewer.tweenControlCenter(targetPos);
+    </script>
   </body>
 </html>

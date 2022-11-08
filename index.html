@@ -55,14 +55,40 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> 
         </div>
         <iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;" src="pano6.html"></iframe>
-        <script src="index.js"></script>
         <div>
-            <a id="viewsource" href="https://github.com/subokim/panovr/blob/master/pano6.js" title="소스보기" target="_blank">
+            <a id="viewsource" href="https://github.com/subokim/panovr/blob/master/pano6.html" title="소스보기" target="_blank">
                 <div><span class="material-symbols-outlined">file_open</span></div>
             </a>
         </div>
+        <script>
+            let sidebar, cardlist, selected, menuButton, viewSrcButton;
+
+            cardlist = document.getElementsByClassName("card");
+            sidebar = document.getElementById("panel");
+            selected = 0;
+
+            function toggleSideBar() {
+                if(sidebar.style.display == 'none') {
+                    sidebar.style.display = 'inline';
+                } else {
+                    sidebar.style.display = 'none';
+                }
+            }
+
+            function selectCard(id) {
+                if ( selected !== null ) cardlist[selected].classList.remove( 'selected' );
+                selected = id;
+                cardlist[id].classList.add( 'selected' );
+                sidebar.style.display = "none";
+
+                var idx = 6 - id;
+                viewSrcButton = document.getElementById("viewsource");
+                viewSrcButton.href = 'https://github.com/subokim/panovr/blob/master/pano'+ idx +'.html';
+                viewSrcButton.title = 'https://github.com/subokim/panovr/blob/master/pano' + idx + '.html';
+            }
+        </script>
     </body>
 </html>
