@@ -1,18 +1,63 @@
----
-layout: default
----
-
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Panorama Tour Sample</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Oswald&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+    <body>
+        <div>
+            <a href="#" onclick="toggleSideBar()">
+                <span class="material-symbols-outlined">apps</span>
+            </a>
+        </div>
+        <div id="panel">
+            <div id="header"><h1>Pano Tour Sample</h1></div>
+            <div id="contentWrapper">
+                <div id="content">
+                    <div class="card selected">
+                        <a href="pano6.html" target="viewer" onclick="selectCard(0)">
+                            <div class="cover"><img src="asset/btn6.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">6. 핫스팟 정보 / Hotspot Infos</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pano5.html" target="viewer" onclick="selectCard(1)">
+                            <div class="cover"><img src="asset/btn5.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">5. 구글 스트릿뷰 / Street View</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pano4.html" target="viewer" onclick="selectCard(2)">
+                            <div class="cover"><img src="asset/btn4.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">4. 2개 장소 / 2 Place, Walk</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pano3.html" target="viewer" onclick="selectCard(3)">
+                            <div class="cover"><img src="asset/btn3.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">3. 핫스팟 링크 / Hotspot Link</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pano2.html" target="viewer" onclick="selectCard(4)">
+                            <div class="cover"><img src="asset/btn2.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">2. 3장 부르기 / Panorama Toggle</div>
+                        </a>
+                    </div>
+                    <div class="card">
+                        <a href="pano1.html" target="viewer" onclick="selectCard(5)">
+                            <div class="cover"><img src="asset/btn1.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">1. 기본 투어 / Simple Viewer</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;" src="pano6.html"></iframe>
+        <script src="index.js"></script>
+    </body>
+</html>
