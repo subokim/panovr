@@ -123,13 +123,36 @@ iframe {
 	padding-left: 0;
 }
 
-.material-symbols-outlined {
-	position: absolute;	
-	z-index : 150;
+#menuicon {
+	position: fixed;
+	z-index : 300;
 	left: 10px;
 	top: 10px;
+	color: #eca03b;
+}
+
+	#menuicon:hover {
+		cursor: pointer;
+		opacity: 1;
+	}
+
+#viewsource {
+	position: fixed;
+	z-index : 600;
+	bottom: 40px;
+	right: 130px;
+	color: #fffb00;
+}
+
+	#viewsource:hover {
+		cursor: pointer;
+		opacity: 1;
+	}
+
+.material-symbols-outlined {
+	position: absolute;
 	font-variation-settings:
-	'FILL' 0,
+	'FILL' 1,
 	'wght' 700,
 	'GRAD' 200,
 	'opsz' 48
