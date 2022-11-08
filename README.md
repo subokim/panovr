@@ -5,14 +5,14 @@
 - Basic Library로 panolens.js 와 three.js 를 이용했습니다.
 
 ## 2.구현개요
-### (1) panolens import 하기
+### (1) panolens import
 - panolens 는 three.js 를 이용해 구현된 오픈소스입니다.
 - import 할 때 three.js 와 panolens.js를 둘다 해야 합니다.
 - panolens.js 는 난독화된 파일로 panolens.min.js 를 제공합니다.
 - panolens 함수는 인터넷 검색한 것과 조금씩 다릅니다.
 - 다른 경우 소스코드를 보고, 추론해야 합니다.
 
-### (2) ponolens 실행하기
+### (2) ponolens 실행
 - three.js 를 본격적으로 사용하려면, node.js 를 써야 합니다.
 - 특히 webpack을 사용해서 서버를 꾸미고자 하는 경우라면 node.js 를 사용합니다.
 - 하지만, 단순한 panorama view 를 사용하고 핸들링하는 정도라면, JavaScript library 만 import 해도 쓸만합니다.
@@ -34,7 +34,7 @@
 - 특별히 건드릴 건 없습니다.
 
 ### (5) angle To Vector
-- SphereGeometry 니까, 나를 기준으로 타겟의 각도를 정하고 나로부터의 거리를 입력하면 그 곳으로 포커스를 옮기고 싶었습니다.
+- SphereGeometry 니까 나를 기준으로 타겟의 각도를 정하고 나로부터의 거리를 입력하면 그 곳으로 포커스를 옮기고 싶었습니다.
 - viewer를 생성하는 경우, camera 의 기본 위치는 {0,0,1} 입니다.
 - 쳐다볼 방향의 벡터좌표값을 가져와야 lookAt 를 할 수 있습니다.
 - 첫째, z 값을 기준으로 수평각 만큼 이동하고, 그 위치에서 다시 수직값만큼 이동시켜 기준좌표를 찾았습니다.
