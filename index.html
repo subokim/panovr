@@ -14,7 +14,7 @@
                 <span class="material-symbols-outlined">menu</span>
             </a>
         </div>
-        <div id="panel">
+        <div id="panel" class="fade-out">
             <div id="header"><h1>Pano Tour Sample</h1></div>
             <div id="contentWrapper">
                 <div id="content">
@@ -65,12 +65,21 @@
         </div>
         <script>
             let sidebar, cardlist, selected, menuButton, viewSrcButton;
-
-            cardlist = document.getElementsByClassName("card");
             sidebar = document.getElementById("panel");
+            cardlist = document.getElementsByClassName("card");
             selected = 0;
 
+            window.onload = function () {
+                setTimeout(function() {
+                    sidebar.classList.add('slideout');
+                },500);
+                setTimeout(function() {
+                    sidebar.style.display = 'none';
+                },1500);
+            }
+
             function toggleSideBar() {
+                sidebar.classList.remove('slideout');
                 if(sidebar.style.display == 'none') {
                     sidebar.style.display = 'inline';
                 } else {
@@ -82,7 +91,11 @@
                 if ( selected !== null ) cardlist[selected].classList.remove( 'selected' );
                 selected = id;
                 cardlist[id].classList.add( 'selected' );
-                sidebar.style.display = "none";
+
+                sidebar.classList.add('slideout');
+                setTimeout(function() {
+                    sidebar.style.display = "none";
+                },1000);
 
                 var idx = 6 - id;
                 viewSrcButton = document.getElementById("viewsource");

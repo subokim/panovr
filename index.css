@@ -48,16 +48,18 @@ h1 {
 	flex-direction: column;
 	transition: 0s 0s height;
 	background-color: #f7f7f0;
-	animation: slidein 0.5s ease forwards;
 }
 
-@keyframes slidein {
+.slideout {
+	animation: slideout 0.5s ease forwards;
+}
+
+@keyframes slideout {
     from {
-        transform: translateX(-100%);
-    	visibility: visible;
+        transform: translateX(0%);
     }
     to {
-        transform: translateX(0%);
+        transform: translateX(-100%);
     }
 }
 
