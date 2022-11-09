@@ -19,6 +19,9 @@ git clone https://github.com/subokim/panovr.git
 Just html and JavaScript  
 use nginx, apache etc ...
 
+## License
+This is free. [MIT license](LICENSE).
+
 # 참고
 
 ## Ponolens
