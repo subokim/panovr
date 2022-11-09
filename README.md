@@ -3,7 +3,9 @@ This project is a Panorama VR Viewer learning course.
 This sources are made by a lightweight javascript built on [Panolens.js](https://pchen66.github.io/Panolens/)와 [Three.js](https://threejs.org/).  
 [Three.js](https://threejs.org/) is JavaScript 3D Library based on WebGL.  
 [Panolens.js](https://pchen66.github.io/Panolens/) is a JavaScript Panorama Viewer from [Three.js](https://threejs.org/).  
-This project requires both of them.
+This project requires both of them.  
+![panorama_vr](./asset/front_pano.gif)
+
 
 [Web](http://subokim.github.io/panovr) - [Github](https://github.com/subokim/panovr)
 
@@ -11,6 +13,9 @@ This project requires both of them.
 ```
 git clone https://github.com/subokim/panovr.git
 ```
+
+## Run
+use nginx, apache etc ...
 
 # 참고
 
