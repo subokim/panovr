@@ -4,6 +4,7 @@ This sources are made by a lightweight javascript built on [Panolens.js](https:/
 [Three.js](https://threejs.org/) is JavaScript 3D Library based on WebGL.  
 [Panolens.js](https://pchen66.github.io/Panolens/) is a JavaScript Panorama Viewer from [Three.js](https://threejs.org/).  
 This project requires both of them.  
+
 ![panorama_vr](./asset/front_pano.gif)
 
 
@@ -15,6 +16,7 @@ git clone https://github.com/subokim/panovr.git
 ```
 
 ## Run
+Just html and JavaScript  
 use nginx, apache etc ...
 
 # 참고
