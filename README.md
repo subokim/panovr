@@ -1,5 +1,3 @@
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsubokim%2Fpanovr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
 # Panorama Tour Sample
 This project is a Panorama VR Viewer learning course.  
 This sources are made by a lightweight javascript built on [Panolens.js](https://pchen66.github.io/Panolens/)와 [Three.js](https://threejs.org/).  
@@ -90,4 +88,5 @@ function getVectorFromAngle(ha, va, radius) {
 - [Basic Knowledgement](https://ahnheejong.name/articles/my-first-octahedron/)
 - [Understand what is Vector](https://docs.unity3d.com/kr/530/Manual/UnderstandingVectorArithmetic.html)
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsubokim%2Fpanovr&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 FIN.
