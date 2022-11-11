@@ -15,15 +15,16 @@
     <div id="bar"></div>
   </div>
   <div class="title">
-    <header>Two places, Walk</header>
-    <article>반포한강공원, 달빛광장</article>
+    <header>Walk between two places</header>
+    <article id="subtitle">반포한강공원, 세빛섬</article>
   </div>
   <div id="container"></div>
   <script>
     var panorama, panorama2, viewer, container, scene, renderer;
-    var bar, infospot;
+    var bar, infospot, subtitle;
 
     bar = document.querySelector( '#bar' );
+    subtitle = document.querySelector( '#subtitle' );
 
     function onProgressUpdate ( event ) {
       var percentage = event.progress.loaded/ event.progress.total * 100;
@@ -54,6 +55,7 @@
 
     panorama.addEventListener( 'enter-fade-start', function(){
       viewer.tweenControlCenter( lookAtPositions[0], 0 );
+      subtitle.innerHTML = '세빛섬, 반포한강공원';
     });
 
     //panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
@@ -61,6 +63,7 @@
     panorama2.addEventListener( 'progress', onProgressUpdate );
     panorama2.addEventListener( 'enter', function(){
       viewer.tweenControlCenter( lookAtPositions[1], 0 );
+      subtitle.innerHTML = '야외무대, 반포한강공원';
     });
 
     panorama.link( panorama2, infospotPositions[0] );
