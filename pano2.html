@@ -3,71 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
-  <title>Toggle 3 Scenes</title>
+  <title>Google Streetview</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Oswald&display=swap" rel="stylesheet">
   <link rel=stylesheet href="style.css">
   <script src="./js/three.js"></script>
   <script src="./js/panolens.min.js"></script>
+  <script src="./js/panocontroller.js"></script>
 </head>
-<body>
+
+  <body>
     <div id="progress">
-        <div id="bar"></div>
-    </div>
+      <div id="bar"></div>
+    </div>    
     <div class="title">
-      <header>Panorama Toggle</header>
-      <article>Three Scenes Change</article>
+      <header>Google StreetView</header>
+      <article>속초 청초호 at 설악대교</article>
     </div>
     <div id="container"></div>
-    <button id="btn1">라실라 천문대</button>
-    <button id="btn2">강의실</button>
-    <button id="btn3">해양기지</button>
-  <script>
-    var panorama1, panorama2, panorama3, viewer, container, infospot;
+    <script>
+      var container, panorama, viewer, scene, camera;
+      
+      bar = document.querySelector( '#bar' );
 
-    var bar = document.querySelector( '#bar' );
-
-    function onProgressUpdate ( event ) {
-      var percentage = event.progress.loaded/ event.progress.total * 100;
-      bar.style.width = percentage + "%";
-      if (percentage >= 100){
-        bar.classList.add( 'hide' );
-        setTimeout(function(){
-          bar.style.width = 0;
-        }, 1000);
+      function onProgressUpdate ( event ) {
+        var percentage = event.progress.loaded/ event.progress.total * 100;
+        bar.style.width = percentage + "%";
+        if (percentage >= 100){
+          bar.classList.add( 'hide' );
+          setTimeout(function(){
+            bar.style.width = 0;
+          }, 1000);
+        }
       }
-    }
 
-    container = document.querySelector( '#container' );
+      container = document.querySelector( '#container' );
+      panorama = new PANOLENS.GoogleStreetviewPanorama('EybxZg5Wo6LIbhreS6JBtQ');
 
-    panorama1 = new PANOLENS.ImagePanorama( 'asset/pano-vr1.jpg' );
-    panorama1.addEventListener( 'progress', onProgressUpdate );
+      viewer = new PANOLENS.Viewer( { container: container, cameraFov : 60 } );
+      viewer.add( panorama );
 
-    panorama2 = new PANOLENS.ImagePanorama( 'asset/pano-vr2.jpg' );
-    panorama2.addEventListener( 'progress', onProgressUpdate );
+      camera = viewer.getCamera();
+      scene = viewer.getScene();
+      renderer = viewer.getRenderer();
 
-    panorama3 = new PANOLENS.ImagePanorama( 'asset/pano-vr3.jpg' );
-    panorama3.addEventListener( 'progress', onProgressUpdate );
+      var gridHelper = new THREE.GridHelper( 20, 20, '#adff2f', '#ff7f50' );
+      scene.add( gridHelper );
 
-    //infospot = new PANOLENS.Infospot( 350, PANOLENS.DataImage.Info );
-    //panorama1.add( infospot );
-
-    viewer = new PANOLENS.Viewer( { container: container } );
-    viewer.add( panorama1, panorama2, panorama3 );
-
-    // Maunal Set Panorama
-    var button1 = document.querySelector( '#btn1' );
-    var button2 = document.querySelector( '#btn2' );
-    var button3 = document.querySelector( '#btn3' );
-
-    // Enter panorama when load completes
-    function onButtonClick( targetPanorama ) {
-      bar.classList.remove( 'hide' );
-      viewer.setPanorama( targetPanorama );
-    }
-
-    button1.addEventListener( 'click', onButtonClick.bind( this, panorama1 ) );
-    button2.addEventListener( 'click', onButtonClick.bind( this, panorama2 ) );
-    button3.addEventListener( 'click', onButtonClick.bind( this, panorama3 ) );
-  </script>
-</body>
+      //camera rotate, lookAt
+      let targetPos = getVectorFromAngle(180, 0, 2000)
+      viewer.tweenControlCenter(targetPos);
+    </script>
+  </body>
 </html>

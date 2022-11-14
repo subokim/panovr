@@ -29,47 +29,53 @@
             <div id="contentWrapper">
                 <div id="content">
                     <div class="card selected">
-                        <a href="pano6.html" target="viewer" onclick="selectCard(0)">
-                            <div class="cover"><img src="asset/btn6.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano1.html" target="viewer" onclick="selectCard(0)">
+                            <div class="cover"><img src="asset/btn1.jpg" loading="lazy" width="400" /></div>
                             <div class="title">1. 성균관 명륜당 소개</div>
                         </a>
                     </div>
                     <div class="card">
-                        <a href="pano5.html" target="viewer" onclick="selectCard(1)">
-                            <div class="cover"><img src="asset/btn5.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano2.html" target="viewer" onclick="selectCard(1)">
+                            <div class="cover"><img src="asset/btn2.jpg" loading="lazy" width="400" /></div>
                             <div class="title">2. 속초 청초호 설악대교</div>
                         </a>
                     </div>
                     <div class="card">
-                        <a href="pano4.html" target="viewer" onclick="selectCard(2)">
-                            <div class="cover"><img src="asset/btn4.jpg" loading="lazy" width="400" /></div>
-                            <div class="title">3. 반포한강공원 거닐기</div>
-                        </a>
-                    </div> 
-                    <div class="card">
-                        <a href="pano3.html" target="viewer" onclick="selectCard(3)">
+                        <a href="pano3.html" target="viewer" onclick="selectCard(2)">
                             <div class="cover"><img src="asset/btn3.jpg" loading="lazy" width="400" /></div>
-                            <div class="title">4. 강의실로 들어가기</div>
+                            <div class="title">3. 명동대성당</div>
                         </a>
                     </div> 
                     <div class="card">
-                        <a href="pano2.html" target="viewer" onclick="selectCard(4)">
-                            <div class="cover"><img src="asset/btn2.jpg" loading="lazy" width="400" /></div>
-                            <div class="title">5. 서로 다른 세 장소</div>
+                        <a href="pano4.html" target="viewer" onclick="selectCard(3)">
+                            <div class="cover"><img src="asset/btn4.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">4. 반포한강공원 거닐기</div>
                         </a>
                     </div> 
                     <div class="card">
-                        <a href="pano1.html" target="viewer" onclick="selectCard(5)">
-                            <div class="cover"><img src="asset/btn1.jpg" loading="lazy" width="400" /></div>
-                            <div class="title">6. 성균관 문묘 은행나무</div>
+                        <a href="pano5.html" target="viewer" onclick="selectCard(4)">
+                            <div class="cover"><img src="asset/btn5.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">5. 라실라 천문대</div>
+                        </a>
+                    </div> 
+                    <div class="card">
+                        <a href="pano6.html" target="viewer" onclick="selectCard(5)">
+                            <div class="cover"><img src="asset/btn6.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">6. 서로 다른 세 장소</div>
+                        </a>
+                    </div> 
+                    <div class="card">
+                        <a href="pano7.html" target="viewer" onclick="selectCard(6)">
+                            <div class="cover"><img src="asset/btn7.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">7. 성균관 문묘 은행나무</div>
                         </a>
                     </div> 
                 </div>
             </div> 
         </div>
-        <iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;" src="pano6.html"></iframe>
+        <iframe id="viewer" name="viewer" allow="fullscreen; xr-spatial-tracking;" src="pano1.html"></iframe>
         <div>
-            <a id="viewsource" href="https://github.com/subokim/panovr/blob/master/pano6.html" title="소스보기" target="_blank">
+            <a id="viewsource" href="https://github.com/subokim/panovr/blob/master/pano1.html" title="소스보기" target="_blank">
                 <div><span class="material-symbols-outlined">file_open</span></div>
             </a>
         </div>
@@ -107,7 +113,7 @@
                     sidebar.style.display = "none";
                 },1000);
 
-                var idx = 6 - id;
+                var idx = id+1;
                 viewSrcButton = document.getElementById("viewsource");
                 viewSrcButton.href = 'https://github.com/subokim/panovr/blob/master/pano'+ idx +'.html';
                 viewSrcButton.title = 'https://github.com/subokim/panovr/blob/master/pano' + idx + '.html';
