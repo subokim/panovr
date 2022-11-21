@@ -8,7 +8,7 @@ This project requires both of them.
 ![panorama_vr](./asset/front_pano.gif)
 
 
-[Web](http://subokim.github.io/panovr) - [Github](https://github.com/subokim/panovr)
+[Web Site](http://subokim.github.io/panovr) - [Github](https://github.com/subokim/panovr)
 
 ## Download
 ```
