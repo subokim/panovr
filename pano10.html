@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+  <meta name="description" Content="가상여행, 파노라마, Panolens, Threejs, WebGL" />
+  <title>Simple Tour</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&family=Oswald&display=swap" rel="stylesheet">
+  <link rel=stylesheet href="style.css">
+  <script src="./js/three.js"></script>
+  <script src="./js/panolens.min.js"></script>
+</head>
+<body>
+  <div id="progress">
+    <div id="bar"></div>
+  </div>
+  <div class="title">
+    <header>Panorama Tour</header>
+    <article>성공회 강화성당</article>
+    <article>2022.11.27</article>
+  </div>
+  <div id="container"></div>
+  <script>
+    var container, panorama, viewer, title;
+
+    bar = document.querySelector( '#bar' );
+
+    function onProgressUpdate ( event ) {
+        var percentage = event.progress.loaded/ event.progress.total * 100;
+        bar.style.width = percentage + "%";
+        if (percentage >= 100){
+          bar.classList.add( 'hide' );
+          setTimeout(function(){
+            bar.style.width = 0;
+          }, 1000);
+        }
+      }
+
+    container = document.querySelector('#container');
+    title = document.getElementsByClassName('title');
+    panorama = new PANOLENS.ImagePanorama('./asset/pano_vr10_.jpg');
+
+    viewer = new PANOLENS.Viewer({container: container});
+    viewer.add(panorama);
+  </script>
+</body>
+</html>

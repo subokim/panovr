@@ -51,7 +51,7 @@
     container = document.querySelector( '#container' );
 
     //panorama = new PANOLENS.GoogleStreetviewPanorama('8VRQVMxTcxwTvaa7T7jktA');
-    panorama = new PANOLENS.ImagePanorama( './asset/pano_vr4.jpg' );
+    panorama = new PANOLENS.ImagePanorama( './asset/pano_vr31.jpg' );
     panorama.addEventListener( 'progress', onProgressUpdate );
     viewer = new PANOLENS.Viewer( { output: 'console', container: container } );
 
@@ -61,7 +61,7 @@
     });
 
     //panorama2 = new PANOLENS.GoogleStreetviewPanorama('EoRzuVjoP8ft_wF6A9pyxQ');
-    panorama2 = new PANOLENS.ImagePanorama( './asset/pano_vr5.jpg' );
+    panorama2 = new PANOLENS.ImagePanorama( './asset/pano_vr32.jpg' );
     panorama2.addEventListener( 'progress', onProgressUpdate );
     panorama2.addEventListener( 'enter', function(){
       viewer.tweenControlCenter( lookAtPositions[1], 0 );

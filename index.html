@@ -30,45 +30,63 @@
             <div id="contentWrapper">
                 <div id="content">
                     <div class="card selected">
-                        <a href="pano1.html" target="viewer" onclick="selectCard(0)">
-                            <div class="cover"><img src="asset/btn1.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano1.html" target="viewer" onclick="selectCard(1)">
+                            <div class="cover"><img src="asset/btn_1.jpg" loading="lazy" width="400" /></div>
                             <div class="title">1. 성균관 명륜당 소개</div>
                         </a>
                     </div>
                     <div class="card">
-                        <a href="pano2.html" target="viewer" onclick="selectCard(1)">
-                            <div class="cover"><img src="asset/btn2.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano2.html" target="viewer" onclick="selectCard(2)">
+                            <div class="cover"><img src="asset/btn_2.jpg" loading="lazy" width="400" /></div>
                             <div class="title">2. 속초 청초호 설악대교</div>
                         </a>
                     </div>
                     <div class="card">
-                        <a href="pano3.html" target="viewer" onclick="selectCard(2)">
-                            <div class="cover"><img src="asset/btn3.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano3.html" target="viewer" onclick="selectCard(3)">
+                            <div class="cover"><img src="asset/btn_3.jpg" loading="lazy" width="400" /></div>
                             <div class="title">3. 명동대성당</div>
                         </a>
                     </div> 
                     <div class="card">
-                        <a href="pano4.html" target="viewer" onclick="selectCard(3)">
-                            <div class="cover"><img src="asset/btn4.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano4.html" target="viewer" onclick="selectCard(4)">
+                            <div class="cover"><img src="asset/btn_4.jpg" loading="lazy" width="400" /></div>
                             <div class="title">4. 반포한강공원</div>
                         </a>
                     </div> 
                     <div class="card">
-                        <a href="pano5.html" target="viewer" onclick="selectCard(4)">
-                            <div class="cover"><img src="asset/btn5.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano5.html" target="viewer" onclick="selectCard(5)">
+                            <div class="cover"><img src="asset/btn_5.jpg" loading="lazy" width="400" /></div>
                             <div class="title">5. 라실라 천문대</div>
                         </a>
                     </div> 
                     <div class="card">
-                        <a href="pano6.html" target="viewer" onclick="selectCard(5)">
-                            <div class="cover"><img src="asset/btn6.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano6.html" target="viewer" onclick="selectCard(6)">
+                            <div class="cover"><img src="asset/btn_6.jpg" loading="lazy" width="400" /></div>
                             <div class="title">6. 서로 다른 세 장소</div>
                         </a>
                     </div> 
                     <div class="card">
-                        <a href="pano7.html" target="viewer" onclick="selectCard(6)">
-                            <div class="cover"><img src="asset/btn7.jpg" loading="lazy" width="400" /></div>
+                        <a href="pano7.html" target="viewer" onclick="selectCard(7)">
+                            <div class="cover"><img src="asset/btn_7.jpg" loading="lazy" width="400" /></div>
                             <div class="title">7. 성균관 문묘 은행나무</div>
+                        </a>
+                    </div> 
+                    <div class="card">
+                        <a href="pano8.html" target="viewer" onclick="selectCard(8)">
+                            <div class="cover"><img src="asset/btn_8.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">8. 거제도 매미성</div>
+                        </a>
+                    </div> 
+                    <div class="card">
+                        <a href="pano9.html" target="viewer" onclick="selectCard(9)">
+                            <div class="cover"><img src="asset/btn_9.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">9. 아산 곡교천 은행나무길 </div>
+                        </a>
+                    </div> 
+                    <div class="card">
+                        <a href="pano10.html" target="viewer" onclick="selectCard(10)">
+                            <div class="cover"><img src="asset/btn_10.jpg" loading="lazy" width="400" /></div>
+                            <div class="title">10. 성공회 강화성당</div>
                         </a>
                     </div> 
                 </div>
@@ -106,15 +124,15 @@
 
             function selectCard(id) {
                 if ( selected !== null ) cardlist[selected].classList.remove( 'selected' );
-                selected = id;
-                cardlist[id].classList.add( 'selected' );
+                if (id > 0) selected = id - 1;
+                cardlist[selected].classList.add( 'selected' );
 
                 sidebar.classList.add('slideout');
                 setTimeout(function() {
                     sidebar.style.display = "none";
                 },1000);
 
-                var idx = id+1;
+                var idx = id;
                 viewSrcButton = document.getElementById("viewsource");
                 viewSrcButton.href = 'https://github.com/subokim/panovr/blob/master/pano'+ idx +'.html';
                 viewSrcButton.title = 'https://github.com/subokim/panovr/blob/master/pano' + idx + '.html';
